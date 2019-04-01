@@ -30,6 +30,9 @@ Route::group(['middleware' => 'auth'], function (){
             Route::post('/upload', 'Document\DocumentController@store')->name('document.upload');
             Route::get('/datatable', 'Document\DocumentController@datatable')->name('document.datatable');
             Route::get('/download/{secure_id}', 'Document\DocumentController@download')->name('document.download');
+            Route::get('/{secure_id}/delete', 'Document\DocumentController@destroy')->name('document.delete');
+            Route::get('/{secure_id}/edit', 'Document\DocumentController@edit')->name('document.edit');
+            Route::post('/{secure_id}/edit', 'Document\DocumentController@update')->name('document.edit');
         });
     });
 });

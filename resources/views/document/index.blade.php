@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title', __('Upload Document'))
+@section('title', __('Browse Document'))
 @section('content')
     <div class="row">
         <!-- Textual inputs start -->
@@ -8,6 +8,7 @@
                 <div class="card-body">
                     <h4 class="header-title">{{__('Document')}}</h4>
                     <p class="text-muted font-14 mb-4">{{__('Browse documents')}}</p>
+                    @include('lib.msg')
                     <div class="table-responsive">
                         <table id="table-document"></table>
                     </div>
@@ -30,6 +31,7 @@
             {data: 'row', name: 'row', orderable : false, title : '{{__("No")}}', searchable : false},
             {data: 'category.name', name: 'category.name', title : '{{__("Category")}}'},
             {data: 'title', name: 'title', title : '{{__("Title")}}'},
+            {data: 'description', name: 'description', title : '{{__("Description")}}'},
             {data: 'created_at', name: 'created_at', title : '{{__("Uploaded at")}}'},
             {data: 'action', name: 'action', orderable : false, title : '{{__("action")}}', searchable : false},
         ]
