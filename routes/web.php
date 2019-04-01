@@ -25,7 +25,11 @@ Route::group(['middleware' => 'auth'], function (){
         Route::post('/categories/{id}/edit','Master\CategoryController@update')->name('master.category.edit');
 
         Route::group(['prefix' => 'documents'], function (){
+            Route::get('/', 'Document\DocumentController@index')->name('document');
             Route::get('/upload', 'Document\DocumentController@upload')->name('document.upload');
+            Route::post('/upload', 'Document\DocumentController@store')->name('document.upload');
+            Route::get('/datatable', 'Document\DocumentController@datatable')->name('document.datatable');
+            Route::get('/download/{secure_id}', 'Document\DocumentController@download')->name('document.download');
         });
     });
 });

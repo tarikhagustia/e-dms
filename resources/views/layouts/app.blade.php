@@ -60,7 +60,7 @@
                                         class="ti-server"></i><span>{{__('Document')}}</span></a>
                             <ul class="collapse">
                                 <li><a href="{{route('document.upload')}}">{{__('Upload')}}</a></li>
-                                <li><a href="#">{{__('Browse')}}</a></li>
+                                <li><a href="{{route('document')}}">{{__('Browse')}}</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -158,6 +158,7 @@
         });
     })
 </script>
+@yield('js')
 </body>
 
 </html>
